@@ -3,6 +3,12 @@ ContainerName?=devGitLab
 MKFILE := $(abspath $(lastword $(MAKEFILE_LIST)))
 CURDIR := $(dir $(MKFILE))
 
+init:
+	mkdir volume
+	mkdir volume/data
+	mkdir volume/logs
+	mkdir volume/config
+
 login:
 	docker exec -it ${ContainerName} /bin/bash
 
