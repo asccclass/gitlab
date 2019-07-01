@@ -18,7 +18,7 @@ log:
 stop:
 	docker stop ${ContainerName}
 run:
-	docker run -d --rm --name ${ContainerName} \
+	docker run -d --restart=always --name ${ContainerName} \
 	-p 10080:80 -p 10022:22 \
 	-v ${CURDIR}volume/data:/var/opt/gitlab:Z \
 	-v ${CURDIR}volume/logs:/var/log/gitlab:Z \
